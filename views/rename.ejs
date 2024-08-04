@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="note-container bg-zinc-900 h-screen w-screen text-white p-10">
+      <a href="/" class="text-orange-600">Go Back</a>
+      <hr />
+      <div
+        class="edit-container mt-5 bg-zinc-700 text-white w-full px-2 py-2 rounded-lg"
+      >
+        <p>Re-name</p>
+        <hr />
+        <form
+          action="/rename"
+          method="post"
+          class="flex flex-col w-1/4 gap-2 mt-2"
+        >
+          <label for="old-name"
+            >old-name
+            <input
+              type="text"
+              value="<%= filename %>"
+              placeholder="old-name"
+              name="old"
+              class="bg-zinc-600 outline-none w-full pointer-events-none  "
+            />
+          </label>
+          <label for="new-name"
+            >new-name
+            <input
+             autocomplete=false
+              type="text"
+              placeholder="new-name"
+              name="new"
+              class="bg-zinc-800 outline-none w-full"
+            />
+          </label>
+          <input type="submit" value="Rename" class="bg-blue-600 w-52 p-2 rounded-lg" >
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
